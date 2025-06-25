@@ -8,10 +8,12 @@ const refs = {
 function $(sel) { return document.querySelector(sel); }
 function $all(sel) { return Array.from(document.querySelectorAll(sel)); }
 
+
 // Add task
 $(refs.addBtn).addEventListener('click', () => {
   const text = $(refs.input).value.trim();
   if (!text) return alert('Cannot add an empty task');
+
   const li = document.createElement('li');
   li.textContent = text;
   $(refs.list).appendChild(li);
@@ -30,6 +32,7 @@ $(refs.list).addEventListener('dblclick', e => {
     e.target.remove();
   }
 });
+
 
 // Clear completed
 if ($(refs.clearBtn)) {
